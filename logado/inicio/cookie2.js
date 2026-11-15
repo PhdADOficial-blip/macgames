@@ -1,14 +1,15 @@
 /* ========== MODAL DO CUPOM ========== */
 
 function obterCookie(nome) {
-    let nomeProcurado = nome + "=";
-    let cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-        let c = cookies[i].trim();
-        if (c.indexOf(nomeProcurado) == 0) return c.substring(nomeProcurado.length, c.length);
-    }
-    return "";
-}
+    let nomeProcurado = nome + "=";// adiciona o sinal de igual para evitar confusão com cookies que tenham nomes parecidos 
+    let cookies = document.cookie.split(';'); // divide os cookies em um array
+
+    for (let i = 0; i < cookies.length; i++) { // percorre todos os cookies
+        let c = cookies[i].trim(); //remove o espaçoi em branco do início e do fim
+        if (c.indexOf(nomeProcurado) == 0) return c.substring(nomeProcurado.length, c.length); // se encontrar o cookie, retorna o valor
+    return ""; // indexOF não encontrou o cookie, retorna vazio C.substring() retorna o valor do cookie, que é a parte da string que vem depois do sinal de igual
+
+    }}
 
 // Fecha o modal ao clicar no botão ou no X
 function fecharModalGame() {
@@ -16,8 +17,8 @@ function fecharModalGame() {
     if (modal) modal.style.display = "none";
 }
 
-// Antes era um DOMContentLoaded. Agora só roda quando for CHAMADA.
-function mostrarModalPromocao() {
+
+function mostrarModalPromocao() { // ← NOVA FUNÇÃO: mostra o modal do cupom, mas só se o usuário ainda não tiver visitado o site
     const modal = document.getElementById("meuModalCookie");
     if (!modal) return;
 
