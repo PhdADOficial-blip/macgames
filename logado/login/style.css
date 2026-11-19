@@ -119,9 +119,12 @@ h1 {
 }
 
 .submit-button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
    width: 100%;
    height: 50px;
-   background-color: rgb(127, 206, 255);
+   background-color: #25d366;
    border: none;
    border-radius: 10px;
    color: #fff;
@@ -133,8 +136,11 @@ h1 {
 }
 
 .submit-button:hover {
-   background-color: rgb(170, 210, 235);
+   background-color: #1faa51;
+}
 
+.whatsapp-button {
+   text-decoration: none;
 }
 
 .resgister-link p {
